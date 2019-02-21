@@ -7,7 +7,7 @@ const getProductWithId = (req, res) => {
   if (params.id > 0)
     return res
       .status(200)
-      .setHeader("content-type", "aplication/json")
+      .set("content-type", "aplication/json")
       .json({
         status: products.length > 0 ? "success" : "no products",
         products
