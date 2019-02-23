@@ -3,7 +3,7 @@ const getProductFromID = require("../../helper/products/getProductsFromID");
 const getProductWithId = (req, res) => {
   const params = req.params;
 
-  const products = getProductFromID([params.id]);
+  const products = getProductFromID(params.id);
   if (params.id > 0)
     return res
       .status(200)

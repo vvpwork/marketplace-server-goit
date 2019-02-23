@@ -11,6 +11,7 @@ const imgFolder = path.resolve(__dirname, '../../assets')
 
 const multerStorage = multer.diskStorage({
         destination: (req, file, next)=>{
+            console.log(file.originalname);
             next(null, imgFolder)
         },
         filename:(req, file, next)=>{

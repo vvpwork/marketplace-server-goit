@@ -1,6 +1,6 @@
 const {routersApi} = require('../module/app');
 const main = require('./main/main');
-const {users, getUserFromId}= require('./user/');
+const {users, getUserFromId}= require('./user');
 const {getAllProducts, getProductWithId} = require('./products');
 const addOrder = require('./orders/addOrders');
 const createImage = require('./imagesRoute/createImage');
@@ -17,6 +17,6 @@ routersApi
 
 .post('/orders', addOrder)
 
-.post('/images', multerImg.single('image'), moveFile, createImage )
+.post('/images', multerImg.single('file'), moveFile, createImage )
 module.exports = routersApi
 
