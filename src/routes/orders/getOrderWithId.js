@@ -1,6 +1,7 @@
-const addOrder = require("../../helper/orders/createOrderMongo");
+const getOrderMongo = require("../../helper/orders/getOrderWithIdMongo");
 const getOrder = (req, res) => {
-  const order = req.body;
+  const id = req.params.id;
+  console.log(id);
   const answer = {
     ok(order) {
       res
@@ -18,10 +19,10 @@ const getOrder = (req, res) => {
         .end();
     }
   };
-
-  addOrder(order)
-    .then(dataOrder => answer.ok(dataOrder))
-    .catch(error => answer.error(error.massage));
+  getOrderMongo(id).exec((err, order) => {
+    if (!err) return answer.ok(order);
+    answer.error();
+  });
 };
 
 module.exports = getOrder;

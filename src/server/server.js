@@ -1,4 +1,4 @@
-const {app} = require('../module/app');
+const {app} = require('../modules/app');
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
 const router = require('../routes/router');

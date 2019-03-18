@@ -1,4 +1,5 @@
 module.exports={
     users: require('./addUser'),
-    getUserFromId: require('./getUserFromId')
+    getUserFromId: require('./getUserFromId'),
+    putUser: require('./putUserWithID')
 }

@@ -1,12 +1,11 @@
-const addUserDb = require("../../helper/user/addUserDb");
+const addUserDb = require("../../helper/user/createUserMongo");
 
 const signUp = (req, res) => {
   const data = req.body;
-
-  const resOk = () => {
+  const resOk = dataUser => {
     res.json({
       status: "success",
-      user: data
+      user: dataUser
     });
   };
 
@@ -18,7 +17,7 @@ const signUp = (req, res) => {
   };
 
   addUserDb(data)
-    .then(() => resOk())
+    .then(dataUserDb => resOk(dataUserDb))
     .catch(error => resErorr(error));
 };
 
