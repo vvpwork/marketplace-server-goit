@@ -3,7 +3,7 @@ const timestamp = require("../../middleware/timestamp");
 const uniqID = require("../../middleware/createID");
 const userShema = new Schema({
   name: String,
-  telephone: Number,
+  telephone: String,
   password: String,
   email: String
 });
